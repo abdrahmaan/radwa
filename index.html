@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo&family=Caveat:wght@500;600;700&family=El+Messiri:wght@500&family=Jost&family=Lemonada:wght@300&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+</head>
+<body style="max-height: 100vh; min-height: 100vh; position: relative; overflow-x: hidden;" class="py-4 bg-dark d-flex flex-column align-items-center justify-content-center">
+    
+
+   <div class="container d-flex flex-column align-items-center justify-content-center">
+     <img id="animation" class="main-img" src="pic3.jpg"
+     style=" z-index: 100;position: relative;max-width: 220px; border-radius: 50%; border: 4px solid #cf346a ;" alt="">
+                        <h2 id="name" class="mt-2" style="transition: 3s ease-in-out;font-family: 'El Messiri', sans-serif; color: #e62e6e; font-size: 50px; position: relative; top: -100px; opacity: 0;">رضوى
+                        </h2>
+
+     <p id="desc" class="mt-2"
+    style="text-align: center; font-family: 'El Messiri', sans-serif; color: white; font-size: 15px;">
+    بصراحة حبيت أعملك حاجة بسيطة أوى أوى مقابل الحاجات اللطيفة اللى حسيت بيها منك
+    ومن طريقتك حسيت إن الموضوع يستاهل و ممكن أحط جزء من وقتى بس أقدملك حاجة بسيطة و مختلفة
+    ،
+    أعرفك بيها إنك إنتى كمان مختلفة فى وجهة نظرى ♥
+    ،
+    بتمنى جداً الحاجة دى تبسطك وتكون أثرت فى يومك بأى شكل ♥
+    ،
+    وبتمنى أكتر مهما حصل تفضلى فاكرة الذكرى اللطيفة دى ♥ ـ
+    <br>
+                        
+</p>
+    </div> 
+
+    <img class="img-heart" src="heart.png" alt="">
+    <img class="img-heart2" src="heart.png" alt="">
+
+<audio src="song.mp3" autoplay></audio>
+
+    <style>
+
+
+        img#animation{
+            opacity: 0;
+            transition: 2s ease-in-out;
+        }
+        img.img-heart{
+            position: absolute;
+            top: -37px;
+            /* left: -145px; ِActive */
+            left: -290px;
+            max-width: 295px;
+            z-index: 1;
+            transition: 1s ease-in-out;
+        }
+        img.img-heart2{
+            position: absolute;
+            top: 70px;
+            /* right: -155px; active */
+            right: -290px;
+            max-width: 295px;
+            z-index: 1;
+            transition: 1.4s ease-in-out;
+        }
+
+    </style>
+
+
+<script>
+let hearts = document.querySelectorAll("img");
+let namee = document.querySelector("#name");
+
+
+setTimeout(() => {
+    hearts[1].style.left = "-100px";
+    hearts[2].style.right = "-100px";
+    hearts[0].style.opacity = 1;
+    namee.style.opacity = 1;
+    namee.style.top = 0;
+
+}, 200);
+let MessageDiv = document.querySelector("p#desc");
+// MessageDiv.innerHTML = "";
+
+
+/// Typeing 
+
+setTimeout(() => {
+    let MessageDiv = document.querySelector("p#desc");
+    let MessageContent = MessageDiv.textContent;
+    let current = 0;
+
+    MessageDiv.innerHTML = "";
+ 
+    setInterval(() => {
+        if (current < MessageContent.length) {
+            MessageDiv.innerHTML += MessageContent.charAt(current);
+            current++;
+        }
+    }, 80);
+}, 100);
+
+// Name
+
+let played = false;
+let audio = document.querySelector("audio");
+
+document.addEventListener("click",()=>{
+
+    if(played == true){
+
+        played = false;
+        audio.pause();
+
+    } else {
+        
+        played = true;
+        audio.play();
+    }
+})
+
+</script>
+    <script src="src/jquery-3.6.0.min.js"></script>
+    <script src="src/popper.js"></script>
+    <script src="src/bootstrap.min.js"></script>
+    <script src="src/bootstrap.bundle.js"></script>
+</body>
+</html>
